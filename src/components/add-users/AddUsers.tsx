@@ -1,3 +1,3 @@
 export default function AddUsers() {
-  return <div className="bg-yellow-200">add user</div>;
+  return <div className="bg-red-400">add user</div>;
 }
