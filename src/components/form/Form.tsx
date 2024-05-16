@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Btn from "../btn/Btn";
+import { postUserData } from "../api/Post-use";
 
 interface typeButton {
   ctaText: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export default function Form({}: typeButton) {
@@ -12,6 +13,18 @@ export default function Form({}: typeButton) {
   const [mobile, setMobile] = useState("");
   const [relative, setRelative] = useState("");
   const [mail, setMail] = useState("");
+
+  const [userInfo, setUserInfo] = useState({
+    name: "",
+    family: "",
+    mobile: "",
+    relative: "",
+    mail: "",
+  });
+  useEffect(() => {
+    postUserData(userInfo);
+  }, [userInfo]);
+
   const resetForm = () => {
     setName("");
     setFamily("");
@@ -22,14 +35,15 @@ export default function Form({}: typeButton) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const event = {
-      id: Math.floor(Math.random() * 100),
+    let userInfoObject = {
       name: name,
       family: family,
       mobile: mobile,
       relative: relative,
       mail: mail,
     };
+    console.log(userInfoObject);
+    setUserInfo(userInfoObject);
     resetForm();
   };
   return (

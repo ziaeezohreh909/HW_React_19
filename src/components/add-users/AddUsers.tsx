@@ -4,7 +4,7 @@ export default function AddUsers() {
   return (
     <div>
       <header className="font-bold text-xl">اضافه / ویرایش کاربران</header>
-     <Form/>
+      <Form ctaText="اضافه کردن" />
     </div>
   );
 }

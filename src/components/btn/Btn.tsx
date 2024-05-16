@@ -1,15 +1,12 @@
 interface btnProps {
   ctaText: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export default function Btn({ ctaText, onClick }: btnProps) {
   return (
     <>
-      <button
-        className=" text-white text-sm font-bold text-center shadow-lg "
-        onClick={onClick}
-      >
+      <button className=" text-white text-sm font-bold text-center shadow-lg ">
         {ctaText}
       </button>
     </>
