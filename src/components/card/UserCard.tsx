@@ -2,10 +2,10 @@ import Btn from "../btn/Btn";
 
 export default function UserCard() {
   return (
-    <div className="bg-zinc-300 border w-1/2 h-auto rounded-md px-2 py-4">
+    <div className="bg-zinc-300 border w-auto rounded-md px-2 py-4 h-[190px]">
       <p className="flex rtl">
         <span className="font-bold">نام :</span>
-        <span>محمد محمدی</span>
+        <span>محمد معصومی</span>
       </p>
       <p className="flex rtl">
         <span className="font-bold">شماره موبایل :</span>

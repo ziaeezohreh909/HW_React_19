@@ -1,3 +1,10 @@
+import Form from "../form/Form";
+
 export default function AddUsers() {
-  return <div className="bg-red-400">add user</div>;
+  return (
+    <div>
+      <header className="font-bold text-xl">اضافه / ویرایش کاربران</header>
+     <Form/>
+    </div>
+  );
 }
