@@ -6,7 +6,10 @@ interface btnProps {
 export default function Btn({ ctaText, onClick }: btnProps) {
   return (
     <>
-      <button className=" text-white text-sm font-bold text-center shadow-lg ">
+      <button
+        className=" text-white text-sm font-bold text-center shadow-lg "
+        onClick={onClick}
+      >
         {ctaText}
       </button>
     </>

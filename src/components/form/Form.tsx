@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import Btn from "../btn/Btn";
 import { postUserData } from "../api/Post-use";
 
@@ -14,6 +14,8 @@ export default function Form({}: typeButton) {
   const [relative, setRelative] = useState("");
   const [mail, setMail] = useState("");
 
+  const initial = useRef(true);
+
   const [userInfo, setUserInfo] = useState({
     name: "",
     family: "",
@@ -22,7 +24,11 @@ export default function Form({}: typeButton) {
     mail: "",
   });
   useEffect(() => {
-    postUserData(userInfo);
+    if (initial.current) {
+      initial.current = false;
+    } else {
+      postUserData(userInfo);
+    }
   }, [userInfo]);
 
   const resetForm = () => {
@@ -33,7 +39,7 @@ export default function Form({}: typeButton) {
     setMail("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     let userInfoObject = {
       name: name,
@@ -42,10 +48,10 @@ export default function Form({}: typeButton) {
       relative: relative,
       mail: mail,
     };
-    console.log(userInfoObject);
     setUserInfo(userInfoObject);
     resetForm();
   };
+
   return (
     <form
       className="rtl border border-gray-100 rounded-md shadow-lg p-4 text-sm font-bold"

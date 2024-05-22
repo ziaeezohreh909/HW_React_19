@@ -28,17 +28,3 @@ export const postUserData = async (userInfo: userInfoType) => {
   }
 };
 
-export const getUserData = async () => {
-  try {
-    const res = await fetch("http://localhost:3000/users", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const jsonResponse = await res.json();
-    return jsonResponse;
-  } catch (error) {
-    console.error("Error posting data:", error);
-  }
-};
