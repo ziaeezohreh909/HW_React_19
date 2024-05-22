@@ -1,28 +1,3 @@
 {
-  "users": [
-    {
-      "id": "823b",
-      "name": "Zohreh",
-      "family": "Ziaei",
-      "mobile": "",
-      "relative": "",
-      "mail": "ziaeezohreh909@gmail.com"
-    },
-    {
-      "id": "0731",
-      "name": "Zohre",
-      "family": "Ziaei",
-      "mobile": "",
-      "relative": "",
-      "mail": "ziaeezohreh909@gmail.com"
-    },
-    {
-      "id": "b8ea",
-      "name": "dfadafadf",
-      "family": "",
-      "mobile": "",
-      "relative": "",
-      "mail": ""
-    }
-  ]
+  "users": []
 }
